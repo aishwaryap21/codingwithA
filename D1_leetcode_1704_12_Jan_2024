@@ -1,0 +1,41 @@
+#LEETCODE 1704. Determine if two string halaves are alike 
+# Problem Description:
+# You are given a string s of even length. Split this string into two halves of equal lengths, and let a be the first half and b be the second half.
+# Two strings are alike if they have the same number of vowels ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'). Notice that s contains uppercase and lowercase letters.
+# Return true if a and b are alike. Otherwise, return false.
+
+# Example 1:
+# Input: s = "book"
+# Output: true
+# Explanation: a = "bo" and b = "ok". a has 1 vowel and b has 1 vowel. Therefore, they are alike.
+# Example 2:
+# Input: s = "textbook"
+# Output: false
+# Explanation: a = "text" and b = "book". a has 1 vowel whereas b has 2. Therefore, they are not alike.
+# Notice that the vowel o is counted twice.
+
+
+class Solution(object):
+    def halvesAreAlike(self, s):
+        def isVowel(current):
+            if (current=="a" or current=="e" or current=="i" or current=="o" or 
+            current=="u" or current=="A" or current=="E" or current=="I" or 
+            current=="O" or current=="U"): return True
+            else: return False
+        
+        n=len(s)
+        leftVowel = 0
+        rightVowel = 0
+        for i in range(n/2):
+            if isVowel(s[i]):
+                leftVowel+=1 
+        for i in range(n/2,n):
+            if isVowel(s[i]):
+                rightVowel+=1
+        if leftVowel==rightVowel:
+            return True 
+        else:
+            return False 
+
+#TC - O(n)
+#SC - O(1)
