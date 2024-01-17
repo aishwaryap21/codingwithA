@@ -52,5 +52,6 @@ class Solution(object):
         answer = [sorted(list(zeroLoss)), sorted(list(oneLoss))]
         return answer
 
+
 #TC - O(nlogn)
 #SC - O(n)
