@@ -26,7 +26,6 @@
 # Apply Operation 2: "caabbb" -> "baaccc"
 # Apply Operation 2: "baaccc" -> "abbccc"
 
-
 class Solution(object):
     def closeStrings(self, word1, word2):
         freq1 = [0] * 26
